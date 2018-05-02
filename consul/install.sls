@@ -19,6 +19,7 @@ consul-user:
     - name: {{ consul.user }}
     - groups:
       - {{ consul.group }}
+      - ssl-cert
     - home: {{ salt['user.info'](consul.user)['home']|default(consul.config.data_dir) }}
     - createhome: False
     - system: True
